@@ -45,6 +45,7 @@ form{
     padding-left: 30px;
     padding-right: 30px;
     display: flex;
+
     flex-direction: column;
    
    
@@ -85,7 +86,18 @@ justify-content: space-around;
 input[type="submit"]{
     color: rgb(0, 0, 0);
     cursor: pointer;
-    padding: 20px;
-    width: 40%;
+    padding: 0;
+    width: 50%;
    margin: 20px auto;
+}
+
+
+
+
+.g-recaptcha{
+    margin-top: 20px;
+    display: flex;
+justify-content: center;
+
+
 }
