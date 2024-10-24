@@ -1,9 +1,17 @@
-function beforeSubmit(){
-    let datePicker = document.getElementById('date-of-birth');
+let captchaChecked = false;
+
+
+
+function beforeSubmit(event){
+   if(captchaChecked){ let datePicker = document.getElementById('date-of-birth');
     let hiddentDate = document.getElementById('Date_of_Birth__c');
 
     let formattedDate =new Date(datePicker.value).toLocaleString("en-US");
-    hiddentDate.value = formattedDate;
+    hiddentDate.value = formattedDate;}
+    else{
+        alert('Please check the reCAPTCHA');
+        event.preventDefault();
+    }
 }
 
 function timestamp() {
@@ -14,3 +22,8 @@ function timestamp() {
             document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems);
         } 
     } setInterval(timestamp, 500); 
+
+
+    function captchaSuccess(){
+        captchaChecked = true;
+    }
